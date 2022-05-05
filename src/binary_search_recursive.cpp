@@ -30,10 +30,10 @@ namespace assignment {
       return index;
     }
     if (median < search_elem) {
-      search(arr, search_elem, index+1, stop);
+      return search(arr, search_elem, index+1, stop);
     }
     else if (median > search_elem) {
-      search(arr, search_elem, start, index-1);
+      return search(arr, search_elem, start, index-1);
     }
   }
 

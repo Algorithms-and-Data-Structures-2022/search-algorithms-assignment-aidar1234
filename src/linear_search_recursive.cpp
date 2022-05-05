@@ -20,7 +20,7 @@ namespace assignment {
       return curr_index;
     }
 
-    search(arr, search_elem, curr_index-1);
+    return search(arr, search_elem, curr_index-1);
 
   }
 

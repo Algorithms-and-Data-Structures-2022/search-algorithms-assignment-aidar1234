@@ -4,6 +4,23 @@ namespace assignment {
 
   std::optional<int> BinarySearchIterative::Search(const std::vector<int>& arr, int search_elem) const {
 
+    int left = 0;
+    int right = arr.size()-1;
+
+    while (left <= right) {
+      int index = (left + right) / 2;
+      int median = arr[index];
+      if (median == search_elem) {
+        return index;
+      }
+      if (median < search_elem) {
+        left = index+1;
+      }
+      else if (median > search_elem) {
+        right = index-1;
+      }
+    }
+
     // Tips:
     // 1. Заведите две переменные: (а) индекс левой границы и (б) индекс правой границы.
     // 2. Поиск ведется пока индекс левой границы не превысил индекс правой.

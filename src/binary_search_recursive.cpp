@@ -20,7 +20,21 @@ namespace assignment {
     // 2. Вызовите рекурсивный метод, изменив границы поиска
     //    в зависимости от неравенства между элементом посередине и целевого элемента
 
-    return std::nullopt;
+    if (start > stop) {
+      return std::nullopt;
+    }
+
+    int index = (start + stop) / 2;
+    int median = arr[index];
+    if (median == search_elem) {
+      return index;
+    }
+    if (median < search_elem) {
+      return search(arr, search_elem, index+1, stop);
+    }
+    else if (median > search_elem) {
+      return search(arr, search_elem, start, index-1);
+    }
   }
 
 }  // namespace assignment
